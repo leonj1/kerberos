@@ -7,9 +7,10 @@ RUN apt-get install -y supervisor
 RUN mkdir -p /var/log/supervisor
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ADD bootstrap.sh /bootstrap.sh
 
 ADD krb5.conf /etc/krb5.conf
 ADD kadm5.acl /etc/krb5kdc/kadm5.acl
 
-#CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf" ]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf" ]
 
