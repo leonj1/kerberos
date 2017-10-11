@@ -4,12 +4,12 @@
 docker run -it image bash
 
 krb5_newrealm
-addprinc root/amin
+root/amin
 
 q - to exit
 
 kadmin.local
-root/admin
+addprinc root/admin
 enter passwd
 
 kinit root/admin
